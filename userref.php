@@ -1,3 +1,10 @@
+<?php
+include 'config.php';
+$email = $_SESSION['email'];
+$sql = "SELECT * FROM `users` WHERE `email` = '$email'";
+$result = mysqli_query($conn, $sql);
+while ($row = $result->fetch_assoc()) {
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +40,7 @@
                 <ul class="flex flex-col gap-5 pt-10">
                     <li class="mb-2 pb-3 border-b-2 border-white"><a href="./usedash.php" class="flex items-center hover:text-gray-400"><i class="fas fa-tachometer-alt mr-2"></i> Dashboard</a></li>
                     <li class="mb-2 pb-3 border-b-2 border-white"><a href="#" class="flex items-center hover:text-gray-400"><i class="fas fa-file-alt mr-2"></i> P/L record</a></li>
-                    <li class="mb-2 pb-3 border-b-2 border-white"><a href="./usertrac.html" class="flex items-center hover:text-gray-400"><i class="fas fa-history mr-2"></i> Transactions history</a></li>
+                    <li class="mb-2 pb-3 border-b-2 border-white"><a href="./usertrac.php" class="flex items-center hover:text-gray-400"><i class="fas fa-history mr-2"></i> Transactions history</a></li>
                     <li class="mb-2 pb-3 border-b-2 border-white"><a href="./funds.html" class="flex items-center hover:text-gray-400"><i class="fas fa-dollar-sign mr-2"></i> Deposit/Withdraw</a></li>
                     <li class="mb-2 pb-3 border-b-2 border-white"><a href="./invplan.html" class="flex items-center hover:text-gray-400"><i class="fas fa-dollar-sign mr-2"></i> Investment Plans</a></li>
                     <li class="mb-2 pb-3 border-b-2 border-white"><a href="#" class="flex items-center hover:text-gray-400"><i class="fas fa-link mr-2"></i> Referral Links</a></li>
@@ -53,7 +60,7 @@
             <h2 class="text-2xl font-bold mb-6">Your Referrals</h2>
             <div class="mb-4">
                 <p class="text-green-400">You can refer users by sharing your referral link:</p>
-                <a href="https://realglobalfx.com/ref205" class="text-blue-400 underline">https://realglobalfx.com/ref205</a>
+                <a href="https://octainvest.org/ref=<?php echo $row['email'] ?>" class="text-blue-400 underline">https://octainvest.org/ref=<?php echo $row['email'] ?></a>
             </div>
             <br>
             <div class="mb-6">
@@ -110,3 +117,6 @@
 
 </body>
 </html>
+<?php
+}
+?>
