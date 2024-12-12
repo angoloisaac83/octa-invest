@@ -31,7 +31,7 @@ while ($row = $result->fetch_assoc()) {
 
     <div class="flex">
         <!-- Sidebar -->
-        <div id="sidebar" class="bg-gray-800 w-64 h-fit p-4 fixed inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition duration-200 ease-in-out">
+        <div id="sidebar" style="z-index: 100;" class="bg-gray-800 w-64 h-fit p-4 fixed inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition duration-200 ease-in-out">
             <h1 class="text-xl font-bold mb-6">Octa Invest</h1>
             <div class="mb-4">
                 <p class="text-2xl capitalize py-5">Welcome, angolo!</p>

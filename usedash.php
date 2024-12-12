@@ -32,7 +32,7 @@ while ($row = $result->fetch_assoc()) {
 
     <div class="flex">
         <!-- Sidebar -->
-        <div id="sidebar" class="bg-gray-800 w-64 h-fit p-4 fixed inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition duration-200 ease-in-out">
+        <div id="sidebar" style="z-index: 100;" class="bg-gray-800 w-64 h-fit p-4 fixed inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition duration-200 ease-in-out">
             <h1 class="text-xl font-bold mb-6">Octa Invest</h1>
             <div class="mb-4">
                 <p class="text-2xl capitalize py-5">Welcome, <?php echo $row['first-name'] ?>!</p>
@@ -54,7 +54,7 @@ while ($row = $result->fetch_assoc()) {
         <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden"></div>
 
         <!-- Main Content -->
-        <div class="flex-1 p-6 md:ml-64"> 
+        <div class="flex-1 p-6 " style="width: 360px;"> 
             <button id="hamburger" class="md:hidden text-white">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
